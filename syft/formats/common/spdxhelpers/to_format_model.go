@@ -488,10 +488,14 @@ func toPackageChecksums(p pkg.Package) ([]spdx.Checksum, bool) {
 			}
 		}
 	case pkg.GolangBinMetadata:
+		if meta.H1Digest == "" {
+			log.Debugf("Empty h1 digest for %q (%s)", meta.MainModule, meta.BuildSettings)
+			break
+		}
 		// because the H1 digest is found in the Golang metadata we cannot claim that the files were analyzed
 		algo, hexStr, err := util.HDigestToSHA(meta.H1Digest)
 		if err != nil {
-			log.Debugf("invalid h1digest: %s: %v", meta.H1Digest, err)
+			log.Debugf("invalid h1digest: %q: %v", meta.H1Digest, err)
 			break
 		}
 		algo = strings.ToUpper(algo)
@@ -537,7 +541,7 @@ func toRelationships(relationships []artifact.Relationship) (result []*spdx.Rela
 
 		// FIXME: we are only currently including Package -> * relationships
 		if _, ok := r.From.(pkg.Package); !ok {
-			log.Debugf("skipping non-package relationship: %+v", r)
+			log.Debugf("skipping non-package relationship: %+[1]v (%[1]T)", r)
 			continue
 		}
 

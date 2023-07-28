@@ -107,6 +107,7 @@ func (c *goLicenses) getLicensesFromLocal(moduleName, moduleVersion string) ([]p
 
 func (c *goLicenses) getLicensesFromRemote(moduleName, moduleVersion string) ([]pkg.License, error) {
 	if !c.opts.searchRemoteLicenses {
+		log.Trace("Search for remote licenses disabled.")
 		return nil, nil
 	}
 
@@ -122,7 +123,7 @@ func (c *goLicenses) getLicensesFromRemote(moduleName, moduleVersion string) ([]
 	// populate the mod cache with the results
 	err = fs.WalkDir(fsys, ".", func(filePath string, d fs.DirEntry, err error) error {
 		if err != nil {
-			log.Debug(err)
+			log.WithFields("err", err).Debug("Failed to walk the file system.")
 			return nil
 		}
 		if d.IsDir() {
@@ -139,6 +140,7 @@ func (c *goLicenses) getLicensesFromRemote(moduleName, moduleVersion string) ([]
 		log.Tracef("remote proxy walk failed for: %s", moduleName)
 	}
 
+	log.Trace("Looking for remote licenses.")
 	return findLicenses(c.localModCacheResolver, moduleSearchGlob(moduleName, moduleVersion))
 }
 
