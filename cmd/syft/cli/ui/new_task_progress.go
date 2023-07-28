@@ -2,8 +2,7 @@ package ui
 
 import "github.com/anchore/bubbly/bubbles/taskprogress"
 
-func (m *Handler) newTaskProgress(title taskprogress.Title, opts ...taskprogress.Option) *taskprogress.Model {
-	opts = append(opts, taskprogress.WithName(title.Default))
+func (m *Handler) newTaskProgress(title taskprogress.Title, opts ...taskprogress.Option) taskprogress.Model {
 	tsk := taskprogress.New(m.Running, opts...)
 
 	tsk.HideProgressOnSuccess = true

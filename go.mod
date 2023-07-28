@@ -207,7 +207,7 @@ require (
 	golang.org/x/crypto v0.11.0 // indirect
 )
 
-replace github.com/anchore/bubbly => ../bubbly
+replace github.com/anchore/bubbly => github.com/a-palchikov/anchore_bubbly v0.0.0-20230728122439-f878fa89f42f
 
 retract (
 	v0.53.2

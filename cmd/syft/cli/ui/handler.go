@@ -20,7 +20,7 @@ var _ interface {
 
 type HandlerConfig struct {
 	TitleWidth        int
-	AdjustDefaultTask func(*taskprogress.Model) *taskprogress.Model
+	AdjustDefaultTask func(taskprogress.Model) taskprogress.Model
 }
 
 type Handler struct {

@@ -76,6 +76,8 @@ github.com/Microsoft/go-winio v0.6.1/go.mod h1:LRdKpFKfdobln8UmuiYcKPot9D2v6svN5
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/ProtonMail/go-crypto v0.0.0-20230717121422-5aa5874ade95 h1:KLq8BE0KwCL+mmXnjLWEAOYO+2l2AE4YMmqG1ZpZHBs=
 github.com/ProtonMail/go-crypto v0.0.0-20230717121422-5aa5874ade95/go.mod h1:EjAoLdwvbIOoOQr3ihjnSoLZRtE8azugULFRteWMNc0=
+github.com/a-palchikov/anchore_bubbly v0.0.0-20230728122439-f878fa89f42f h1:dyTYHGZNZE6i6kz8PcRuM8dRFMkrO8MhKugAVySzeuE=
+github.com/a-palchikov/anchore_bubbly v0.0.0-20230728122439-f878fa89f42f/go.mod h1:Ger02eh5NpPm2IqkPAy396HU1KlK3BhOeCljDYXySSk=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d h1:licZJFw2RwpHMqeKTCYkitsPqHNxTmd4SNR5r94FGM8=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d/go.mod h1:asat636LX7Bqt5lYEZ27JNDcqxfjdBQuJ/MM4CN/Lzo=
 github.com/acobaugh/osrelease v0.1.0 h1:Yb59HQDGGNhCj4suHaFQQfBps5wyoKLSSX/J/+UifRE=
