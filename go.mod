@@ -207,6 +207,8 @@ require (
 	golang.org/x/crypto v0.11.0 // indirect
 )
 
+replace github.com/anchore/bubbly => ../bubbly
+
 retract (
 	v0.53.2
 	v0.53.1 // Published accidentally with incorrect license in depdencies

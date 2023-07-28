@@ -49,7 +49,12 @@ func (m *UI) Setup(subscription partybus.Unsubscribable) error {
 	}
 
 	m.subscription = subscription
-	m.program = tea.NewProgram(m, tea.WithOutput(os.Stderr), tea.WithInput(os.Stdin))
+	m.program = tea.NewProgram(m,
+		tea.WithOutput(os.Stderr),
+		tea.WithInput(os.Stdin),
+		tea.WithoutSignalHandler(),
+		tea.WithoutCatchPanics(),
+	)
 	m.running.Add(1)
 
 	go func() {

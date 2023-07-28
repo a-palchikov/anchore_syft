@@ -134,10 +134,8 @@ func Catalog(resolver file.Resolver, _ *linux.Release, parallelism int, cataloge
 	discoveredPackages := make(chan int64, nCatalogers)
 
 	waitGroup := sync.WaitGroup{}
-
+	waitGroup.Add(parallelism)
 	for i := 0; i < parallelism; i++ {
-		waitGroup.Add(1)
-
 		go func() {
 			defer waitGroup.Done()
 
