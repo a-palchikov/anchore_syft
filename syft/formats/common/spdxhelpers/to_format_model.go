@@ -489,7 +489,6 @@ func toPackageChecksums(p pkg.Package) ([]spdx.Checksum, bool) {
 		}
 	case pkg.GolangBinMetadata:
 		if meta.H1Digest == "" {
-			log.Debugf("Empty h1 digest for %q (%s)", meta.MainModule, meta.BuildSettings)
 			break
 		}
 		// because the H1 digest is found in the Golang metadata we cannot claim that the files were analyzed

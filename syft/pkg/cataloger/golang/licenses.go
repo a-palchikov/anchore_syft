@@ -107,7 +107,6 @@ func (c *goLicenses) getLicensesFromLocal(moduleName, moduleVersion string) ([]p
 
 func (c *goLicenses) getLicensesFromRemote(moduleName, moduleVersion string) ([]pkg.License, error) {
 	if !c.opts.searchRemoteLicenses {
-		log.Trace("Search for remote licenses disabled.")
 		return nil, nil
 	}
 
@@ -140,7 +139,6 @@ func (c *goLicenses) getLicensesFromRemote(moduleName, moduleVersion string) ([]
 		log.Tracef("remote proxy walk failed for: %s", moduleName)
 	}
 
-	log.Trace("Looking for remote licenses.")
 	return findLicenses(c.localModCacheResolver, moduleSearchGlob(moduleName, moduleVersion))
 }
 
